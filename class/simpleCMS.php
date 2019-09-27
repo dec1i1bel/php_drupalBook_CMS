@@ -17,7 +17,7 @@ class simpleCMS {
         ?>
   
         <div class="post" id="'messsage_id-'<?= $row["message_id"] ?>'">
-          <span class="time">#<?= $row['message_id'] ?> от <?= date('d-M-Y', $row['created']) ?></span>
+          <span class="time">#<?= $row['message_id'] ?> от <?= $row['created'] ?></span>
           <h2><?= $row['title'] ?></h2>
           <p><?= $row['bodytext'] ?></p>
           

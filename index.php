@@ -18,7 +18,7 @@
 
       mysqli_close($db_connection);
 
-      switch ($_GET['admin']){
+      switch ($_GET['admin']) {
         case 'add':
           if(!$_POST) {
             print $obj->display_admin();
@@ -38,12 +38,13 @@
             print $obj->display_public();
           }
         break;
-        default:
-          if(!$_POST) {
-            print $obj->display_public();
-          }
-
+      default:
+        if(!$_POST) {
+          print $obj->display_public();
+        }
       }
+    
+      
 
       /**
        * проверяем, есть ли что-то в переменной $_POST
