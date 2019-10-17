@@ -134,8 +134,9 @@ class simpleCMS {
   }
 
   public function sql_write($p) {
+    $t = date('Y-m-d');
     $db_link = $this->connectDB();
-    $sql = 'INSERT INTO messages ( title, bodytext, created ) VALUES ( "'.$p["title"].'", "'.$p["bodytext"].'", "'.time().'")';
+    $sql = 'INSERT INTO messages ( title, bodytext, created ) VALUES ( "'.$p["title"].'", "'.$p["bodytext"].'", "'.$t.'")';
     mysqli_query($db_link, $sql);    
     mysqli_close($db_link);
   }

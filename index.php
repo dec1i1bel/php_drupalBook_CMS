@@ -10,6 +10,7 @@
 <body>
   <div id="page-wrap">
     <?php
+      error_reporting(0);
       include_once('class/simpleCMS.php');
       $obj = new simpleCMS;
       $db_connection = $obj->connectDB();
@@ -29,10 +30,10 @@
         break;
         case 'delete':
           if($_GET['message_id']) {
-            $obj->display_delete($_GET['message_id']);
-            // print $obj->display_public();
             echo '<p>Message successfully deleted</p>';
             echo '<a href="index.php">Go to main page</a>';
+            $obj->display_delete($_GET['message_id']);
+            // print $obj->display_public();
           } else {
             print '<p>не выбран message_id</p>';
             print $obj->display_public();
